@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "Bus +",
+    "slug": "busmais",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.inovatec.busmais"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.inovatec.busmais"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +33,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6753fc4c-bef9-4b0f-945a-ad3d9d1bf1cf"
+      }
+    },
+    "owner": "inova_tec",
+    "updates": {
+      "url": "https://u.expo.dev/6753fc4c-bef9-4b0f-945a-ad3d9d1bf1cf"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
