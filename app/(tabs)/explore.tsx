@@ -10,93 +10,62 @@ import { ThemedView } from '@/components/ThemedView';
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
+      headerBackgroundColor={{ light: '#FFFFFF', dark: '#FFFFFF' }}
+      headerImage={
+        <Image
+          source={require('@/assets/images/Logobus.jpeg')} // Adicione sua imagem aqui
+          style={styles.headerImage} 
+        />
+      }>
+      
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="title">OBJETIVOS DO BUS+</ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
+      
+      <ThemedText>Um Aplicativo de Acessibilidade Pública</ThemedText>
+
+      {/* Seção 1 - O que é, e o que faz? */}
+      <Collapsible title="O que é, e o que faz?">
         <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
+        O aplicativo Bus+ visa a apoiar e ajudar as pessoas q possuem deficiência visual a conseguir mais acessibilidade ao pegar o ônibus, utilizando de comandos de voz para ajudar o usuário a  conseguir acessar a função desejada de forma fácil e acessível.
         </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
+       
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
+
+      {/* Seção 2 - Benefício ao Público */}
+      <Collapsible title="Benefício ao Público">
         <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+        O app procura auxiliar a pessoa ao pegar o ônibus utilizando de sistemas sonoros para quando o seu ônibus estiver chegando, como também identifica a localização do ônibus, se houve algum atraso ou desvio fora do normal e o seu destino, tudo isso com a ajuda de um sistema controlado por voz.
         </ThemedText>
       </Collapsible>
-      <Collapsible title="Images">
+
+      {/* Seção 3 - APP */}
+      <Collapsible title="APP">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+        O aplicativo tem o objetivo de ser funcional em todos os sistemas operacionais. Também busca a ter uma interface fácil de se utilizar, sendo acessível a pessoas com dificuldades de lidar com aplicativos e celulares. <ThemedText type="defaultSemiBold"></ThemedText>{' '}
+          <ThemedText type="defaultSemiBold"></ThemedText> 
         </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
+        <Image source={require('@/assets/images/logo.png')} style={{ alignSelf: 'center' }} />
+        
       </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
+
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+    width: '50%', // Preenche a largura total do cabeçalho
+    height: 360, // Altura do cabeçalho (pode ser ajustada)
+    resizeMode: 'stretch', // Faz a imagem preencher mantendo a proporção
+    alignSelf: 'center',
+    marginBottom: 20,
   },
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+    justifyContent: 'center', // Centraliza o conteúdo no eixo horizontal
+    alignItems: 'center', // Alinha o conteúdo no centro do eixo vertical
+    marginTop: 20, // Espaço superior, se necessário
   },
 });

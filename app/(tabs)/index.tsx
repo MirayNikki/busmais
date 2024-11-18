@@ -8,63 +8,70 @@ import { ThemedView } from '@/components/ThemedView';
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#FFFFFF', dark: '#FFFFFF' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/Logobus.jpeg')} // Caminho da imagem do logotipo
+          style={styles.headerImage} // Estilo atualizado para preencher o cabeçalho
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Bora começar #@!% !</ThemedText>
-        <HelloWave />
-      </ThemedView>
+      {/* Conteúdo da página */}
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
+        <ThemedText type="title">BUS+ Wireframes</ThemedText>
+        
+        <ThemedView style={styles.imageContainer}>
+          <Image
+            source={require('@/assets/images/wireframe1.jpeg')} // Caminho correto do logotipo
+            style={styles.busWire1}
+          />
+          <Image
+            source={require('@/assets/images/Wireframe2.jpeg')} // Caminho da imagem do logotipo
+            style={styles.busWire2}
+          />
+          <Image
+            source={require('@/assets/images/wireframe3.jpeg')} // Caminho da imagem do logotipo
+            style={styles.busWire3}
+          />
+        </ThemedView>
       </ThemedView>
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  // Estilo do cabeçalho para preencher 100% da largura
+  headerImage: {
+    width: '50%', // Preenche a largura total do cabeçalho
+    height: 360, // Altura do cabeçalho (pode ser ajustada)
+    resizeMode: 'stretch', // Faz a imagem preencher mantendo a proporção
+    alignSelf: 'center',
   },
   stepContainer: {
     gap: 8,
-    marginBottom: 8,
+    marginBottom: 20,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  imageContainer: {
+    flexDirection: 'row', // Alinha as imagens lado a lado
+    justifyContent: 'space-between', // Distribui as imagens igualmente
+    alignItems: 'center', // Alinha as imagens verticalmente
+    marginTop: 16,
+  },
+  busWire1: {
+    height: 300,
+    width: 300,
+    resizeMode: 'stretch', // Mantém a proporção da imagem
+    alignSelf: 'flex-start', // Posiciona à esquerda
+  },
+  busWire2: {
+    height: 300,
+    width: 300,
+    resizeMode: 'stretch', // Mantém a proporção da imagem
+    alignSelf: 'center', // Posiciona no centro
+  },
+  busWire3: {
+    height: 300,
+    width: 300,
+    resizeMode: 'stretch', // Mantém a proporção da imagem
+    alignSelf: 'flex-end', // Posiciona à direita
   },
 });
