@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   busWire: {
     height: 260, // Ajustado o tamanho das imagens para ficarem organizadas
-    width: '65%', // Ajusta a largura para 80% da tela
+    width: '70%', // Ajusta a largura para 80% da tela
     resizeMode: 'stretch', // Ajusta a imagem para caber dentro do espaço disponível
     alignSelf: 'center',
     marginBottom: 16, // Espaço entre as imagens
