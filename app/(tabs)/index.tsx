@@ -22,15 +22,15 @@ export default function HomeScreen() {
         <ThemedView style={styles.imageContainer}>
           <Image
             source={require('@/assets/images/wireframe1.jpeg')} // Caminho correto do logotipo
-            style={styles.busWire1}
+            style={styles.busWire}
           />
           <Image
             source={require('@/assets/images/Wireframe2.jpeg')} // Caminho da imagem do logotipo
-            style={styles.busWire2}
+            style={styles.busWire}
           />
           <Image
             source={require('@/assets/images/wireframe3.jpeg')} // Caminho da imagem do logotipo
-            style={styles.busWire3}
+            style={styles.busWire}
           />
         </ThemedView>
       </ThemedView>
@@ -51,27 +51,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   imageContainer: {
-    flexDirection: 'row', // Alinha as imagens lado a lado
-    justifyContent: 'space-between', // Distribui as imagens igualmente
-    alignItems: 'center', // Alinha as imagens verticalmente
+    flexDirection: 'column', // Alinha as imagens em coluna (uma abaixo da outra)
+    justifyContent: 'center', // Garante que as imagens fiquem centralizadas verticalmente
+    alignItems: 'stretch', // Centraliza as imagens na horizontal
     marginTop: 16,
   },
-  busWire1: {
-    height: 300,
-    width: 300,
-    resizeMode: 'stretch', // Mantém a proporção da imagem
-    alignSelf: 'flex-start', // Posiciona à esquerda
-  },
-  busWire2: {
-    height: 300,
-    width: 300,
-    resizeMode: 'stretch', // Mantém a proporção da imagem
-    alignSelf: 'center', // Posiciona no centro
-  },
-  busWire3: {
-    height: 300,
-    width: 300,
-    resizeMode: 'stretch', // Mantém a proporção da imagem
-    alignSelf: 'flex-end', // Posiciona à direita
+  busWire: {
+    height: 260, // Ajustado o tamanho das imagens para ficarem organizadas
+    width: '50%', // Ajusta a largura para 80% da tela
+    resizeMode: 'stretch', // Ajusta a imagem para caber dentro do espaço disponível
+    alignSelf: 'center',
+    marginBottom: 16, // Espaço entre as imagens
   },
 });
